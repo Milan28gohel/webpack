@@ -1,10 +1,17 @@
 require('file-loader?name=[name].[ext]!./index.html');
 import React from 'react';
+import './App.scss';
+import {Provider} from 'react-redux';
 import ReactDom from 'react-dom';
-import  App  from './App';
-// import { render } from 'react-dom';
+import { store } from './helpers';
+import { configureFakeBackend } from './helpers';
+import { App }  from './App';
 import './App.scss'
 
-const appElement  = document.getElementById('app');
-
-ReactDom.render (<App />, appElement);
+configureFakeBackend();
+ReactDom.render (
+<Provider store={store}>
+     <App />
+</Provider>,
+document.getElementById('app')
+);

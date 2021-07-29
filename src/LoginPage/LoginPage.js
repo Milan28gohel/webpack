@@ -1,17 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-// import { connect } from 'react-redux';
- 
-class LoginPage extends Component{
-    constructor(props){
+import { connect } from 'react-redux';
+import {userActions} from '../actions';
+
+class LoginPage extends React.Component {
+    constructor(props) {
         super(props);
 
-        // this.props.logout();
+        
+        this.props.logout();
 
-        this.state ={
-            username:'',
-            password:'',
-            submitted:false
+        this.state = {
+            username: '',
+            password: '',
+            submitted: false
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -58,7 +60,7 @@ class LoginPage extends Component{
                         <button className="btn btn-primary">Login</button>
                         {loggingIn &&
                             <img src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
-                        } 
+                        }
                         <Link to="/register" className="btn btn-link">Register</Link>
                     </div>
                 </form>
@@ -67,15 +69,16 @@ class LoginPage extends Component{
     }
 }
 
-{/* function mapState(state) {    const { loggingIn } = state.authentication;
+function mapState(state) {
+    const { loggingIn } = state.authentication;
     return { loggingIn };
 }
 
- const actionCreators = {
-     login: userActions.login,
+const actionCreators = {
+    login: userActions.login,
     logout: userActions.logout
- };
+};
 
- const connectedLoginPage = connect(mapState, actionCreators)(LoginPage);
- export { connectedLoginPage as LoginPage }; */}
-export default LoginPage;
+const connectedLoginPage = connect(mapState, actionCreators)(LoginPage);
+export { connectedLoginPage as LoginPage };
+

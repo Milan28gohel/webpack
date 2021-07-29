@@ -1,1 +1,1 @@
-export {default as RegisterPage} from './Register'
+export {RegisterPage}from './RegisterPage';
