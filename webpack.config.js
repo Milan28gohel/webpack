@@ -38,7 +38,5 @@ module.exports = {
             })
         },
         plugins: [new MiniCssExtractPlugin()],
-        // plugins: [new HtmlWebpackPlugin({
-        //     template: './src/index.html'
-        // })],
+       
 };
