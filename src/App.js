@@ -7,8 +7,12 @@ import { PrivateRoute } from './components';
 import { HomePage } from './HomePage';
 import { LoginPage } from './LoginPage';
 import  {RegisterPage } from './RegisterPage';
+import Contact from './Contact/Contact';
 import { Header } from './Header';
-// import  {Contact} from './contact';
+import {Footer} from './Footer';
+import {Slide} from './Slidebar';
+
+
 
 class App extends React.Component{
     constructor(props){
@@ -33,14 +37,18 @@ class App extends React.Component{
                         <Router history={history}>
                             <Switch>
                                 <PrivateRoute exact path="/" component={HomePage} />
+                                <Route path="/slide" component={Slide} />
                                 <Route path="/login" component={LoginPage} />
                                 <Route path="/register" component={RegisterPage} />
-                                {/* <Route path="/contact" component={Contact} /> */}
+                                <Route path="/Contact" component={Contact} />
+
                                 <Redirect from="*" to="/" />
                             </Switch>
                         </Router>
                     </div>
                 </div>
+             
+                <Footer />
             </div>
         );
     }
