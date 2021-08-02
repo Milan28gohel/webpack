@@ -1,8 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+
 
 export class Slide extends Component {
     render() {
         return (
+           <div>
+          
             <div>
             {/* <!-- banner --> */}
             <section className="banner_main">
@@ -50,6 +53,7 @@ export class Slide extends Component {
                </div>
             </section>
       {/* <!-- end banner --> */}
+      </div>
       </div>
     
         )

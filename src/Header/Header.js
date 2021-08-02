@@ -1,8 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+// import { Slide } from '../Slidebar';
 
 export class Header extends Component {
     render() {
         return (
+           <div>
+              {/* <Slide /> */}
             <div>
                 <header>
       
@@ -25,17 +28,20 @@ export class Header extends Component {
                         </button>
                         <div className="collapse navbar-collapse" id="navbarsExample04">
                            <ul className="navbar-nav mr-auto">
-                              <li className="nav-item active">
+                              <li className="nav-item ">
                                  <a className="nav-link" href="/">Home</a>
                               </li>
-                              <li className="nav-item">
+                              {/* <li className="nav-item">
                                  <a className="nav-link" href="/login">Login</a>
                               </li>
                               <li className="nav-item">
                                  <a className="nav-link" href="/register">Registeration</a>
-                              </li>
+                              </li> */}
                               <li className="nav-item">
                                  <a className="nav-link" href="/contact">Contact Us</a>
+                              </li>
+                              <li className="nav-item">
+                                 <a className="nav-link" href="/login">LogOut</a>
                               </li>
                            </ul>
                         </div>
@@ -45,6 +51,7 @@ export class Header extends Component {
             </div>
          </div>
       </header>
+            </div>
             </div>
         )
     }

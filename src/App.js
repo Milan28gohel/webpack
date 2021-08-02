@@ -8,9 +8,8 @@ import { HomePage } from './HomePage';
 import { LoginPage } from './LoginPage';
 import  {RegisterPage } from './RegisterPage';
 import Contact from './Contact/Contact';
-import { Header } from './Header';
 import {Footer} from './Footer';
-import {Slide} from './Slidebar';
+
 
 
 
@@ -28,7 +27,7 @@ class App extends React.Component{
         return(
         
                 <div>
-                     <Header />
+               
                 <div>
                     <div>
                         {alert.message &&
@@ -37,7 +36,6 @@ class App extends React.Component{
                         <Router history={history}>
                             <Switch>
                                 <PrivateRoute exact path="/" component={HomePage} />
-                                <Route path="/slide" component={Slide} />
                                 <Route path="/login" component={LoginPage} />
                                 <Route path="/register" component={RegisterPage} />
                                 <Route path="/Contact" component={Contact} />
