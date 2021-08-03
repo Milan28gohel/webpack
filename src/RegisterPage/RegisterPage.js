@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-
-import { userActions } from '../actions';
+import { history } from '../helpers';
+import { userActions,isLoggedIn } from '../actions';
 
 class RegisterPage extends React.Component {
     constructor(props) {
@@ -20,6 +20,15 @@ class RegisterPage extends React.Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentDidMount(){
+        if (isLoggedIn()) {
+            history.push('/');
+        }
+        // else {
+        //     this.props.logout();
+        // }
     }
 
     handleChange(event) {
