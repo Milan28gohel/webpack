@@ -93,3 +93,8 @@ function _delete(id) {
     function success(id) { return { type: userConstants.DELETE_SUCCESS, id } }
     function failure(id, error) { return { type: userConstants.DELETE_FAILURE, id, error } }
 }
+
+export const isLoggedIn = () => {
+    console.log(localStorage.getItem('user'));
+    return localStorage.getItem('user')? true : false;
+}

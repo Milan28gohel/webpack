@@ -1,32 +1,37 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import {userActions} from '../actions';
+import {userActions, isLoggedIn} from '../actions';
+import { Redirect } from 'react-router-dom';
+import { history } from '../helpers';
 
 class LoginPage extends React.Component {
     constructor(props) {
         super(props);
-
         
-        this.props.logout();
-        // let loggedIn = false
+        // this.props.logout();
+       
         this.state = {
             username: '',
             password: '',
-            // loggedIn
-            submitted: false
+            submitted: false,
+            loading: false,
+            error: ''
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    componentDidMount() {
-        const user = localStorage.getItem('Bearer fake-jwt-token') // your saved token in localstorage
-        if (user && user !== 'undefined') {            // check for not undefined
-            this.props.history.push('/')               // now you can redirect your desired route
+    componentDidMount(){
+        if (isLoggedIn()) {
+            history.push('/');
+        }
+        else {
+            this.props.logout();
         }
     }
+
     handleChange(e) {
         const { name, value } = e.target;
         this.setState({ [name]: value });
@@ -39,7 +44,7 @@ class LoginPage extends React.Component {
         const { username, password } = this.state;
         if (username && password) {
             this.props.login(username, password);
-        }
+        }    
     }
 
     Path(path){

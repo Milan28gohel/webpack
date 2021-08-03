@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-// import { Slide } from '../Slidebar';
+import { connect } from 'react-redux';
+import {userActions } from '../actions';
 
-export class Header extends Component {
-    render() {
+
+class Header extends Component {
+    render() {       
         return (
            <div>
-              {/* <Slide /> */}
+            
             <div>
                 <header>
       
@@ -31,17 +33,11 @@ export class Header extends Component {
                               <li className="nav-item ">
                                  <a className="nav-link" href="/">Home</a>
                               </li>
-                              {/* <li className="nav-item">
-                                 <a className="nav-link" href="/login">Login</a>
-                              </li>
-                              <li className="nav-item">
-                                 <a className="nav-link" href="/register">Registeration</a>
-                              </li> */}
                               <li className="nav-item">
                                  <a className="nav-link" href="/contact">Contact Us</a>
                               </li>
                               <li className="nav-item">
-                                 <a className="nav-link" href="/login">LogOut</a>
+                                 <a className="nav-link" href="/login" onClick={this.props.logout}>LogOut</a>
                               </li>
                            </ul>
                         </div>
@@ -57,4 +53,17 @@ export class Header extends Component {
     }
 }
 
-export default Header
+
+function mapState(state) {
+   const { loggingIn } = state.authentication;
+   return { loggingIn };
+}
+
+const actionCreators = {
+   login: userActions.login,
+   logout: userActions.logout
+};
+
+
+const connectedHeader = connect(mapState, actionCreators)(Header);
+export { connectedHeader as Header };
