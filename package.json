@@ -7,7 +7,7 @@
     "build": "webpack --mode production"
   },
   "keywords": [],
-  "author": "",
+  "author": "jane-doe",
   "license": "ISC",
   "dependencies": {
     "history": "^4.10.1",
