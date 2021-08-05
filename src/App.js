@@ -7,8 +7,8 @@ import { PrivateRoute } from './components';
 import { HomePage } from './HomePage';
 import { LoginPage } from './LoginPage';
 import  {RegisterPage } from './RegisterPage';
-import Contact from './Contact/Contact';
 import {Footer} from './Footer';
+import ContactPage from "./ContactPage/ContactPage"
 
 
 
@@ -38,7 +38,7 @@ class App extends React.Component{
                                 <PrivateRoute exact path="/" component={HomePage} />
                                 <Route path="/login" component={LoginPage} />
                                 <Route path="/register" component={RegisterPage} />
-                                <PrivateRoute path="/Contact" component={Contact} />
+                                <PrivateRoute path="/contact" component={ContactPage} />
 
                                 <Redirect from="*" to="/" />
                             </Switch>
