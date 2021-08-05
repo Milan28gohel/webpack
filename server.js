@@ -1,7 +1,11 @@
 var path = require('path');
 var express = require('express');
 var app = express();
-var history = require('connect-history-api-fallback');
+var fallback = require('express-history-api-fallback')
+
+var root = __dirname + '/dist'
+app.use(express.static(root))
+app.use(fallback('index.html', { root: root }))
 
 
 app.use(express.static(path.join(__dirname, 'dist')));
@@ -12,8 +16,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
  
-var app = express();
-app.use(history());
 
 
 var server = app.listen(app.get('port'), function() {
