@@ -18,7 +18,7 @@ class Header extends Component {
                      <div className="full">
                         <div className="center-desk">
                            <div className="logo">
-                              <a href="index.html"><img src="/public/images/LOGO.png" alt="/" /></a>
+                              <a href="index.html"><img src="public/images/LOGO.png" alt="" /></a>
                            </div>
                         </div>
                      </div>
