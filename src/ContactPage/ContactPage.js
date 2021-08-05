@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Header } from '../Header';
 
-export class Contact extends Component {
+class ContactPage extends Component {
     render() {
         return (
             <div>
@@ -66,4 +66,4 @@ export class Contact extends Component {
     }
 }
 
-export default Contact;
+export default ContactPage;
