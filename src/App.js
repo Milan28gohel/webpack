@@ -7,7 +7,7 @@ import { PrivateRoute } from './components';
 import { HomePage } from './HomePage';
 import { LoginPage } from './LoginPage';
 import  {RegisterPage } from './RegisterPage';
-import Contact from './Contact/Contact';
+import {Contact} from './Contact';
 import {Footer} from './Footer';
 
 
