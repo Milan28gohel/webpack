@@ -1,5 +1,5 @@
 import config from 'config';
-import { authHeader } from '../helpers';
+import { authHeader  } from '../helpers';
 
 export const userService = {
     login,
@@ -23,7 +23,6 @@ function login(username, password) {
         .then(user => {
             // store user details and jwt token in local storage to keep user logged in between page refreshes
             localStorage.setItem('user', JSON.stringify(user));
-
             return user;
         });
 }
@@ -31,6 +30,7 @@ function login(username, password) {
 function logout() {
     // remove user from local storage to log user out
     localStorage.removeItem('user');
+
 }
 
 function getAll() {
